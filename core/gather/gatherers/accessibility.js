@@ -62,7 +62,7 @@ async function runA11yChecks() {
       'identical-links-same-purpose': {enabled: true},
       'image-redundant-alt': {enabled: true},
       'input-button-name': {enabled: true},
-      'label-content-name-mismatch': {enabled: true},
+      'label-content-name-mismatch': {enabled: false},
       'landmark-one-main': {enabled: true},
       'link-in-text-block': {enabled: true},
       'marquee': {enabled: false},
