@@ -73,7 +73,7 @@ class ReportScoring {
         // scoreDisplayMode is already set. This ensures audits that don't contribute to the
         // category score are visually distinguished in the report with informative styling.
         if (member.weight === 0 && result.scoreDisplayMode === Audit.SCORING_MODES.BINARY) {
-          // result.scoreDisplayMode = Audit.SCORING_MODES.INFORMATIVE;
+          result.scoreDisplayMode = Audit.SCORING_MODES.INFORMATIVE;
         }
 
         console.log('memberid: ', member.id);
