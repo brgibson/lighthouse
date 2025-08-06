@@ -56,34 +56,15 @@ class ReportScoring {
       const auditRefs = configCategory.auditRefs.map(configMember => {
         const member = {...configMember};
 
-
-        const result = resultsByAuditId[member.id];
-
         // If a result was not applicable, meaning its checks did not run against anything on
-        // the page, force it's weight to 0. It will not count during the arithmeticMean() but
+        // the page, force its weight to 0. It will not count during the arithmeticMean() but
         // will still be included in the final report json and displayed in the report as
         // "Not Applicable".
+        const result = resultsByAuditId[member.id];
         if (result.scoreDisplayMode === Audit.SCORING_MODES.NOT_APPLICABLE ||
             result.scoreDisplayMode === Audit.SCORING_MODES.INFORMATIVE ||
             result.scoreDisplayMode === Audit.SCORING_MODES.MANUAL) {
           member.weight = 0;
-        }
-
-        // Automatically set zero-weight audits to informative display mode if no explicit
-        // scoreDisplayMode is already set. This ensures audits that don't contribute to the
-        // category score are visually distinguished in the report with informative styling.
-        if (member.weight === 0 && result.scoreDisplayMode === Audit.SCORING_MODES.BINARY) {
-          result.scoreDisplayMode = Audit.SCORING_MODES.INFORMATIVE;
-          // revert this because it messes with other things (ie. it makes some audits show up that should be in the "not applicable" section
-        }
-
-        console.log('memberid: ', member.id);
-
-        if (member.id == 'aria-allowed-role') {
-          console.log('hi ben\n--------------------------------member:');
-          console.log(member);
-          console.log('hi ben\n--------------------------------result:');
-          console.log(result);
         }
 
         return member;
