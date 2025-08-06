@@ -512,7 +512,7 @@ const defaultConfig = {
       //
       // Notes:
       //  • Experimental rules always have weight 0
-      //  • Best practice rules without a wcagA+AA tag do not affect scores they have minor impact
+      //  • Best practice rules only affect scores when tagged with wcagA+AA and are moderate, serious, or critical.
       //
       // To find the latest axe-core Impact and Tag values:
       //   1. Browse to https://dequeuniversity.com/rules/axe/html.
