@@ -512,13 +512,12 @@ const defaultConfig = {
       //
       // Notes:
       //  • Experimental rules always have weight 0
-      //  • Best practice rules (without wcagA+AA tag) only affect scores when they have serious or critical impact
+      //  • Best practice rules (without wcagA+AA tag) do not affect scores they have minor impact
       //
       // To find the latest axe-core Impact and Tag values:
       //   1. Browse to https://dequeuniversity.com/rules/axe/html.
       //   2. Click on the latest rule set (ex: https://dequeuniversity.com/rules/axe/html/4.10)
       //   3. Review the tables
-
       auditRefs: [
         {id: 'accesskeys', weight: 7, group: 'a11y-navigation'}, // Serious, best-practice
         {id: 'aria-allowed-attr', weight: 10, group: 'a11y-aria'}, // Critical, wcag2a
