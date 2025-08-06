@@ -35,6 +35,7 @@ class IdenticalLinksSamePurpose extends AxeAudit {
       title: str_(UIStrings.title),
       failureTitle: str_(UIStrings.failureTitle),
       description: str_(UIStrings.description),
+      scoreDisplayMode: AxeAudit.SCORING_MODES.INFORMATIVE,
       requiredArtifacts: ['Accessibility'],
     };
   }

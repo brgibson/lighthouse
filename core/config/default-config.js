@@ -501,8 +501,8 @@ const defaultConfig = {
       // ┌────────────┬───────────────────────────────────────────────┐
       // │ Impact     │ Weight Based on Tags                          │
       // │            ├──────────────┬─────────────────┬──────────────┤
-      // │            │     wcag*    │  best-practice  │ experimental │
-      // │            │ (ex: wcag2a) │ (w/o wcag* tag) │              │
+      // │            │  wcag A+AA   │  best-practice  │ experimental │
+      // │            │ (ex: wcag2aa)│ (w/o wcag tag)  │              │
       // ├────────────┼──────────────┼─────────────────┼──────────────┤
       // │ Minor      │       1      │        0        │      0       │
       // │ Moderate   │       3      │        3        │      0       │
@@ -512,7 +512,7 @@ const defaultConfig = {
       //
       // Notes:
       //  • Experimental rules always have weight 0
-      //  • Best practice rules (without wcag* tag) only affect scores when they have serious or critical impact
+      //  • Best practice rules (without wcagA+AA tag) only affect scores when they have serious or critical impact
       //
       // To find the latest axe-core Impact and Tag values:
       //   1. Browse to https://dequeuniversity.com/rules/axe/html.
@@ -574,7 +574,6 @@ const defaultConfig = {
         {id: 'th-has-data-cells', weight: 7, group: 'a11y-tables-lists'}, // Serious, wcag2a
         {id: 'valid-lang', weight: 7, group: 'a11y-language'}, // Serious, wcag2aa
         {id: 'video-caption', weight: 10, group: 'a11y-audio-video'}, // Critical, wcag2a
-        {id: 'identical-links-same-purpose', weight: 1, group: 'a11y-best-practices'}, // Minor, wcag2aaa
         {id: 'landmark-one-main', weight: 3, group: 'a11y-best-practices'}, // Moderate, best-practice
         // Manual audits
         {id: 'focusable-controls', weight: 0},
@@ -588,10 +587,12 @@ const defaultConfig = {
         {id: 'custom-controls-labels', weight: 0},
         {id: 'custom-controls-roles', weight: 0},
         // Low-impact best-practices
+        {id: 'table-duplicate-name', weight: 0, group: 'a11y-best-practices'}, // Minor, best-practice
+        {id: 'empty-heading', weight: 0, group: 'a11y-best-practices'}, // Minor, best-practice
         {id: 'aria-allowed-role', weight: 0, group: 'a11y-best-practices'}, // Minor, best-practice
         {id: 'image-redundant-alt', weight: 0, group: 'a11y-names-labels'}, // Minor, best-practice
-        {id: 'table-duplicate-name', weight: 0, group: 'a11y-tables-lists'}, // Minor, best-practice
-        {id: 'empty-heading', weight: 0, group: 'a11y-best-practices'}, // Minor, best-practice
+        // WCAG AAA
+        {id: 'identical-links-same-purpose', weight: 0, group: 'a11y-best-practices'}, // Minor, wcag2aaa
         // Hidden audits (ie. experimental)
         {id: 'label-content-name-mismatch', weight: 0, group: 'hidden'}, // Serious, experimental
         {id: 'table-fake-caption', weight: 0, group: 'hidden'}, // Serious, experimental
