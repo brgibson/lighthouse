@@ -587,7 +587,7 @@ const defaultConfig = {
         {id: 'offscreen-content-hidden', weight: 0},
         {id: 'custom-controls-labels', weight: 0},
         {id: 'custom-controls-roles', weight: 0},
-        // Low-Ompact best-practices
+        // Low-impact best-practices
         {id: 'aria-allowed-role', weight: 0, group: 'a11y-best-practices'}, // Minor, best-practice
         {id: 'image-redundant-alt', weight: 0, group: 'a11y-names-labels'}, // Minor, best-practice
         {id: 'table-duplicate-name', weight: 0, group: 'a11y-tables-lists'}, // Minor, best-practice

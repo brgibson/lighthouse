@@ -74,6 +74,7 @@ class ReportScoring {
         // category score are visually distinguished in the report with informative styling.
         if (member.weight === 0 && result.scoreDisplayMode === Audit.SCORING_MODES.BINARY) {
           result.scoreDisplayMode = Audit.SCORING_MODES.INFORMATIVE;
+          // revert this because it messes with other things (ie. it makes some audits show up that should be in the "not applicable" section
         }
 
         console.log('memberid: ', member.id);
@@ -83,7 +84,6 @@ class ReportScoring {
           console.log(member);
           console.log('hi ben\n--------------------------------result:');
           console.log(result);
-          // result.scoreDisplayMode = Audit.SCORING_MODES.INFORMATIVE;
         }
 
         return member;
