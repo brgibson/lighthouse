@@ -496,7 +496,8 @@ const defaultConfig = {
       description: str_(UIStrings.a11yCategoryDescription),
       manualDescription: str_(UIStrings.a11yCategoryManualDescription),
       supportedModes: ['navigation', 'snapshot'],
-      // Audit weights weights are derived from the axe-core Impact, with adjustments based on axe-core Tags:
+      // Audit weights weights are derived from the axe-core "Impact",
+      // with adjustments based on axe-core "Tags":
       //
       // ┌────────────┬───────────────────────────────────────────────┐
       // │ Impact     │ Weight Based on Tags                          │
@@ -512,7 +513,8 @@ const defaultConfig = {
       //
       // Notes:
       //  • Experimental rules always have weight 0
-      //  • Best practice rules only affect scores when tagged with wcagA+AA and are moderate, serious, or critical.
+      //  • Best practice rules only affect scores when tagged with wcagA+AA
+      //    and are moderate, serious, or critical.
       //
       // To find the latest axe-core Impact and Tag values:
       //   1. Browse to https://dequeuniversity.com/rules/axe/html.
